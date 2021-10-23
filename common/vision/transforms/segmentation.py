@@ -230,7 +230,7 @@ class RandomResizedCrop(T.RandomResizedCrop):
         """
         top, left, height, width = self.get_params(image, self.scale, self.ratio)
         image = image.crop((left, top, left + width, top + height))
-        image = image.resize(self.size, self.interpolation)
+        image = image.resize(self.size, Image.BICUBIC)
         label = label.crop((left, top, left + width, top + height))
         label = label.resize(self.size, Image.NEAREST)
         return image, label

@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "transfer-learning-library"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+torch = "1.9.0"
+torchvision = "0.10.0"
+prettytable = "^2.2.1"
+tqdm = "^4.62.3"
+scikit-learn = "^1.0"
+webcolors = "^1.11.1"
+matplotlib = "^3.4.3"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

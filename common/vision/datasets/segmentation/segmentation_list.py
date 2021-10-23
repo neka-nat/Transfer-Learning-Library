@@ -89,7 +89,10 @@ class SegmentationList(data.Dataset):
         image_name = self.data_list[index]
         label_name = self.label_list[index]
         image = Image.open(os.path.join(self.root, self.data_folder, image_name)).convert('RGB')
-        label = Image.open(os.path.join(self.root, self.label_folder, label_name))
+        try:
+            label = Image.open(os.path.join(self.root, self.label_folder, label_name))
+        except FileNotFoundError:
+            label = Image.fromarray(np.zeros((image.height, image.width)))
         image, label = self.transforms(image, label)
 
         # remap label
